@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("searchFormSubmit").addEventListener("click", function(defaultEvent) {
         defaultEvent.preventDefault();
-        submitSearch(document.getElementById("searchForm").value);
+        submitSearch(document.getElementById("searchInput").value);
     });
 });
 
@@ -11,14 +11,25 @@ function submitSearch(searchVal) {
     callAjax(apiUrl, displayResults);
 }
 
+
+
 function displayResults(resultObject) {
     //console.log(resultObject.query.search[0].pageid);
     removeResultDivs();
+<<<<<<< HEAD
     let newDiv;
     let resultIndex;
   for (let resultIndex in resultObject.query.search) {
       newDiv = buildResultDiv(resultObject.query.search[resultIndex].title, resultObject.query.search[resultIndex].snippet, resultObject.query.search[resultIndex].pageid);
       document.getElementById("resultArea").appendChild(newDiv);
+=======
+    document.getElementById("searchSection").className = "alignTop";
+    let newDiv;
+    let resultIndex;
+    for (let resultIndex in resultObject.query.search) {
+        newDiv = buildResultDiv(resultObject.query.search[resultIndex].title, resultObject.query.search[resultIndex].snippet, resultObject.query.search[resultIndex].pageid);
+        document.getElementById("resultArea").appendChild(newDiv);
+>>>>>>> cb5d30c8236b9f66256ea7253adae43d284f9fc2
   }
 }
 
@@ -39,6 +50,16 @@ function buildResultDiv(title, snippet, pageid) {
   resultElement.innerHTML = snippet +"...";
   resultDiv.appendChild(resultElement);  
   return resultDiv;
+<<<<<<< HEAD
+=======
+}
+
+function removeResultDivs() {
+  let resultArea = document.getElementById("resultArea");
+  while (resultArea.hasChildNodes()) {
+    resultArea.removeChild(resultArea.lastChild);
+  }
+>>>>>>> cb5d30c8236b9f66256ea7253adae43d284f9fc2
 }
 
 function removeResultDivs() {
@@ -62,5 +83,5 @@ function callAjax(url, callback){
     }
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
-  }
+}
 
