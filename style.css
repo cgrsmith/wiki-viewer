@@ -1,11 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 * {
-  font-family: 'Montserrat', sans-serif;
-  color: #FFF;
+  font-family: sans-serif;
+  color: #333;
   font-weight: lighter; }
 
 body {
-  background-color: #0e0845; }
+  background-color: #FFF; }
+
+h1 {
+  text-align: center; }
 
 #randomArticleLink {
   display: block;
@@ -16,17 +19,41 @@ body {
   text-decoration: none; }
 
 #searchForm {
-  text-align: center;
-  width: 200px;
-  height: 16px;
+  display: table;
+  width: 300px;
+  height: 36px;
   margin: auto;
-  padding: 8px;
-  border: #ff9924 4px solid; }
+  border: #a2a9b1 1px solid;
+  text-align: left;
+  vertical-align: center; }
+  #searchForm:focus-within {
+    margin-top: -1px;
+    margin-bottom: -1px;
+    border: #36c 2px solid; }
 
-#searchInput, #searchFormSubmit {
+#searchInput {
   display: inline-block;
-  background-color: #0e0845;
-  border: none; }
+  border: none;
+  font-size: 1.2rem;
+  line-height: 24px;
+  margin-left: 4px;
+  padding: 6px 0;
+  width: 260px;
+  outline: none; }
+
+#searchFormSubmit {
+  display: inline-block;
+  border: none;
+  width: 30px;
+  height: 30px;
+  margin: 4px 3px;
+  background-color: #36c; }
+
+.fa-search {
+  color: #FFF; }
+
+#resultArea {
+  margin-top: 20px; }
 
 .alignCenter {
   padding-top: 20%; }
@@ -36,6 +63,8 @@ body {
 
 .resultTitle, .resultSnippet {
   margin: 0;
+  line-height: 1.4rem;
+  padding: 4px;
   color: #222; }
 
 .resultDiv {
@@ -48,6 +77,9 @@ body {
   width: 800px;
   max-width: 85%;
   padding: 8px 16px;
-  border: #0e0845 4px solid; }
+  border: solid 2px #FFF;
+  border: solid 1px #a2a9b1; }
   .resultDiv:hover {
-    border: #ff9924 4px solid; }
+    margin-top: -1px;
+    margin-bottom: -1px;
+    border: #36c 2px solid; }

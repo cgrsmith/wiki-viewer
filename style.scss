@@ -1,19 +1,22 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
-$bg-color: hsl(246, 80%, 15%);
-$accent-color: hsl(32, 100%, 57%);
-$font-color-main: #FFF;
+$bg-color: #FFF;
+$accent-color: #36c;
+$font-color-main: #333;
 $font-color-sec: #222;
+$border-color: #a2a9b1;
 
 * {
-  font-family: 'Montserrat', sans-serif;
+  font-family:  sans-serif;
   color: $font-color-main;
   font-weight: lighter;
 }
 body {
   background-color: $bg-color;
 }
-
+h1 {
+  text-align: center;
+}
 #randomArticleLink {
   display: block;
   width: 200px;
@@ -24,21 +27,42 @@ body {
 }
 
 #searchForm  {
-  text-align: center;
-  width: 200px;
-  height: 16px;
+  display: table;
+  width: 300px;
+  height: 36px;
   margin: auto;
-  padding:8px;
-  border: $accent-color 4px solid;
+  border: $border-color 1px solid;
+  text-align: left;
+  vertical-align: center;
+  &:focus-within{
+    margin-top: -1px;
+    margin-bottom: -1px;
+    border: $accent-color 2px solid;
+  }
 }
 #searchInput {
-  
-  
-}
-#searchInput, #searchFormSubmit {
   display: inline-block;
-  background-color: $bg-color;
   border: none;
+  font-size: 1.2rem;
+  line-height: 24px;
+  margin-left: 4px;
+  padding: 6px 0;
+  width: 260px;
+  outline: none;
+}
+#searchFormSubmit {
+  display: inline-block;
+  border: none;
+  width: 30px;
+  height: 30px;
+  margin: 4px 3px;
+  background-color: $accent-color;
+}
+.fa-search {
+  color: $bg-color;
+}
+#resultArea {
+  margin-top: 20px;
 }
 
 .alignCenter {
@@ -50,12 +74,14 @@ body {
 }
 .resultTitle, .resultSnippet {
   margin: 0;
+  line-height: 1.4rem;
+  padding: 4px;
   color: $font-color-sec;
 }
 .resultDiv {
   display: block;
   text-decoration: none;
-  background-color: $font-color-main;
+  background-color: $bg-color;
   
   margin: auto;
   margin-top: 20px;
@@ -63,8 +89,11 @@ body {
   width: 800px;
   max-width: 85%;
   padding: 8px 16px;
-  border: $bg-color 4px solid;
+  border: solid 2px $bg-color;
+  border: solid 1px $border-color;
   &:hover {
-    border: $accent-color 4px solid;
+    margin-top: -1px;
+    margin-bottom: -1px;
+    border: $accent-color 2px solid;
   }
 }
